@@ -28,6 +28,9 @@ RUN apt-get install -y \
 
 # SSH configuration ....................................................................................................
 
+COPY ssh /root/.ssh
+RUN chmod -R 600 /root/.ssh
+
 RUN mkdir /var/run/sshd
 RUN echo 'root:root' | chpasswd
 RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
