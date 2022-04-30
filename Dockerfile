@@ -54,6 +54,7 @@ RUN git clone https://github.com/jiangmiao/auto-pairs
 
 # GIT configuration ....................................................................................................
 
+RUN git config --global push.default matching
 RUN git config --global user.name "${git_username}"
 RUN git config --global user.email "${git_email}"
 
